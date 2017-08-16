@@ -1,0 +1,19 @@
+﻿#form {
+    margin-left: 50px;
+    width: 1000px
+}
+
+#map {
+  height: 500px;
+  width: 1000px;
+  margin-left: 50px;
+}
+
+.indent {
+
+    margin-left: 50px;
+}
+
+.move-down {
+    margin-top: 10px;
+}

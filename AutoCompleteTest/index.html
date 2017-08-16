@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="ngAutocomplete">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAx8B_GAXnzkhkCBlwmgN1EPSRCiLYzZBA&libraries=places"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+    <script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+    
+    <script src="ngAutocomplete.js"></script>
+
+</head>
+<body>
+    <div ng-controller="TestCtrl">
+
+        <form id="form" role="form" name="but">
+            <div class="form-group move-down">
+                <label for="Autocomplete2">Autocomplete Model</label>
+                <input type="text" id="Autocomplete2" ng-model="autocomplete" class="form-control" ng-autocomplete options="options" details="details" />
+                <br><br>
+                <b>autocomplete</b>: {{autocomplete}}
+                <br><br>
+                <b>details (formatted address)</b>: {{details.formatted_address}}
+                <br><br>
+                <b>details (formatted phone number)</b>: {{details.formatted_phone_number}}
+                <br><br>
+                <b>details (opening - close hours Monday)</b>: {{details.opening_hours.periods[0].open.time}} - {{details.opening_hours.periods[0].close.time}}
+                <br><br>
+                <b>details (opening - close hours Tuesday)</b>: {{details.opening_hours.periods[1].open.time}} - {{details.opening_hours.periods[1].close.time}}
+                <br><br>
+                <b>details (opening - close hours Wednesday)</b>: {{details.opening_hours.periods[2].open.time}} - {{details.opening_hours.periods[2].close.time}}
+                <br><br>
+                <b>details (opening - close hours Thursday)</b>: {{details.opening_hours.periods[3].open.time}} - {{details.opening_hours.periods[3].close.time}}
+                <br><br>
+                <b>details (opening - close hours Friday)</b>: {{details.opening_hours.periods[4].open.time}} - {{details.opening_hours.periods[4].close.time}}
+                <br><br>
+                <b>details (opening - close hours Saturday)</b>: {{details.opening_hours.periods[5].open.time}} - {{details.opening_hours.periods[5].close.time}}
+                <br><br>
+                <b>details (opening - close hours Sunday)</b>: {{details.opening_hours.periods[6].open.time}} - {{details.opening_hours.periods[6].close.time}}
+                <br><br>
+                <b>details (rating)</b>: {{details.rating}}
+                <br><br>
+                <b>details (latitude)</b>: {{details.geometry.location.lat()}}
+                <br><br>
+                <b>details (longitude)</b>: {{details.geometry.location.lng()}}
+            </div>
+        </form>
+        <div id="map" ng-controller="MapCtrl"></div>
+    </div>
+    
+</body>
+</html>
