@@ -27,8 +27,9 @@
 
 angular.module("ngAutocomplete", [])
 
-  .controller("TestCtrl", function ($scope) {
-  })
+    .controller("TestCtrl", function ($scope) {
+
+    })
 
     .controller('MapCtrl', function ($scope, $window) {
 
@@ -163,7 +164,6 @@ angular.module("ngAutocomplete", [])
                                 scope.$apply(function () {
                                     scope.details = null;
                                 });
-
                             } else {
                                 var placesService = new google.maps.places.PlacesService(element[0]);
                                 placesService.getDetails(
